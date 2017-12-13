@@ -9,7 +9,11 @@ import com.openrubicon.core.api.recipes.interfaces.Recipe;
 import com.openrubicon.core.api.scoreboard.interfaces.ScoreboardSection;
 import com.openrubicon.core.api.server.players.interfaces.PlayerData;
 import com.openrubicon.core.interfaces.Module;
+import com.openrubicon.essentials.chat.EssentialsChat;
+import com.openrubicon.essentials.cheat.EssentialsCheat;
 import com.openrubicon.essentials.general.EssentialsGeneral;
+import com.openrubicon.essentials.locations.EssentialsLocations;
+import com.openrubicon.essentials.protect.EssentialsProtect;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
@@ -29,6 +33,10 @@ public class RRPGEssentials extends JavaPlugin implements Module {
     public ArrayList<Command> getCommands() {
         ArrayList<Command> commands = new ArrayList<Command>();
         commands.addAll(new EssentialsGeneral().getCommands());
+        commands.addAll(new EssentialsProtect().getCommands());
+        commands.addAll(new EssentialsLocations().getCommands());
+        commands.addAll(new EssentialsChat().getCommands());
+        commands.addAll(new EssentialsCheat().getCommands());
         return null;
     }
 
