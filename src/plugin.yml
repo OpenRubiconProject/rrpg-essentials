@@ -1,0 +1,11 @@
+name: RRPGEssentials
+version: 0.0.1
+authors: [ShawnClake, QuinnBast]
+main: com.openrubicon.essentials.RRPGEssentials
+depend: [RRPGCore]
+database: true
+website: https://github.com/OpenRubiconProject
+commands:
+      rrpg-essentials:
+               description: Spits out the current status of Rubicon Essentials and its versions
+               usage: /rrpg-essentials
