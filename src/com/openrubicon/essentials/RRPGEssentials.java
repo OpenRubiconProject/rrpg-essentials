@@ -9,6 +9,7 @@ import com.openrubicon.core.api.recipes.interfaces.Recipe;
 import com.openrubicon.core.api.scoreboard.interfaces.ScoreboardSection;
 import com.openrubicon.core.api.server.players.interfaces.PlayerData;
 import com.openrubicon.core.interfaces.Module;
+import com.openrubicon.essentials.general.EssentialsGeneral;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
@@ -26,6 +27,8 @@ public class RRPGEssentials extends JavaPlugin implements Module {
 
     @Override
     public ArrayList<Command> getCommands() {
+        ArrayList<Command> commands = new ArrayList<Command>();
+        commands.addAll(new EssentialsGeneral().getCommands());
         return null;
     }
 
@@ -61,7 +64,7 @@ public class RRPGEssentials extends JavaPlugin implements Module {
 
     @Override
     public String getKey() {
-        return "rrpg-essentials";
+        return "rrpg-general";
     }
 
     @Override
