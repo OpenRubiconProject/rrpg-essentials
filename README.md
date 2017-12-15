@@ -6,9 +6,10 @@ Reference Document.
 Ah yes. It doesnt keep my tabbing or line breaks. Wonderful.
 
 Commands:
+
 Command | Permission | Description
 --- | --- | --- 
- break | essentials.break | Allows access to the /break command.
+break | essentials.break | Allows access to the /break command.
  enchant | essentials.enchant | Allows access to the /enchant command.
  exp | essentials.exp | Allow access to the /exp command.
  feed | essentials.feed | Allows access to the /feed command.
