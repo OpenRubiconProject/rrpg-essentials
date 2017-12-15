@@ -1,14 +1,20 @@
 # rrpg-essentials
-Essential server commands
-
-Reference Document.
-
-Ah yes. It doesnt keep my tabbing or line breaks. Wonderful.
+Essential module for basic server commands.
 
 Commands:
 
 Command | Permission | Description | Status
 --- | --- | --- | ---
+tpdeny | essentials.tpdeny | Allow access to the /tpdeny command. | In Progress
+tphere | essentials.tphere | Allow access to the /tphere command. | In Progress
+tpaccept | essentials.tpaccept | Allow access to the /tpaccept command. | In Progress
+tpahere | essentials.tpahere | Allow access to the /tpahere command. | In Progress
+tpa | essentials.tpa | Allow access to the /tpa command. | In Progress
+tp | essentials.tpa | Allow access to the /tpa command. | In Progress
+sethome | essentials.sethome | Allow access to the /sethome command. | In Progress
+delhome | essentials.delhome | Allow access to the /delhome command. | In Progress
+home | essentials.home | Allow access to the /home command. | In Progress
+homes | essentials.homes | Allow access to the /homes command | In Progress
 break | essentials.break | Allows access to the /break command. | Not Implemented
 enchant | essentials.enchant | Allows access to the /enchant command. | Not Implemented
 exp | essentials.exp | Allow access to the /exp command. | Not Implemented
@@ -86,8 +92,6 @@ killall | essentials.killall | Allows access to the /killall command. | Not Impl
 lightning | essentials.lightning | Allow access to the /lightning command. | Not Implemented
 unban | essentials.unban | Allow access to the /unban command. | Not Implemented
 unbanip | essentials.unbanip | Allow access to the /unbanip command. | Not Implemented
-tpdeny | essentials.tpdeny | Allow access to the /tpdeny command. | Not Implemented
-tphere | essentials.tphere | Allow access to the /tphere command. | Not Implemented
 spawner | essentials.spawner | Allow access to the /spawner command. | Not Implemented
 suicide | essentials.suicide | Allow access to the /suicide command. | Not Implemented
 kickall | essentials.kickall | Allow access to the /kickall command. | Not Implemented
@@ -97,19 +101,13 @@ sudo | essentials.sudo | Allow access to the /sudo command. | Not Implemented
 tempban | essentials.tempban | Allow access to the /tempban command. | Not Implemented
 thunder | essentials.thunder | Allow access to the /thunder command. | Not Implemented
 jump | essentials.jump | Allow access to the /jump command. | Not Implemented
-sethome | essentials.sethome | Allow access to the /sethome command. | Not Implemented
 setwarp | essentials.setwarp | Allow access to the /setwarp command. | Not Implemented
 togglejail | essentials.togglejail | Allow access to the /togglejail command. | Not Implemented
 vanish | essentials.vanish | Allow access to the /vanish command. | Not Implemented
-delhome | essentials.delhome | Allow access to the /delhome command. | Not Implemented
 delwarp | essentials.delwarp | Allow access to the /delwarp command. | Not Implemented
-home | essentials.home | Allow access to the /home command. | Not Implemented
 top | essentials.top | Allow access to the /top command. | Not Implemented
 tp | essentials.tp | Allow access to the /tp command. | Not Implemented
-tpa | essentials.tpa | Allow access to the /tpa command. | Not Implemented
 tpaall | essentials.tpaall | Allow access to the /tpaall command. | Not Implemented
-tpaccept | essentials.tpaccept | Allow access to the /tpaccept command. | Not Implemented
-tpahere | essentials.tpahere | Allow access to the /tpahere command. | Not Implemented
 tpall | essentials.tpall | Allow access to the /tpall command. | Not Implemented
 tpo | essentials.tpo | Allow access to the /tpo command. | Not Implemented
 tpohere | essentials.tpohere | Allow access to the /tpohere command. | Not Implemented
