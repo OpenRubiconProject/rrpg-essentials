@@ -33,13 +33,6 @@ repair | essentials.repair | Allow access to the /repair command. | ![#ff0000](h
 time | essentials.time | Allow access to the /time command. | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
 tree | essentials.tree | Allow access to the /tree command. | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
 unlimited | essentials.unlimited | Allow access to the /unlimited command. | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
-balance | essentials.balance | Allow access to the /balance command. | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
-balancetop | essentials.balancetop | Allow access to the /balancetop command. | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
-eco | essentials.eco | Allow access to the /eco command. | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
-pay | essentials.pay | Allow access to the /pay command. | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
-sell | essentials.sell | Allow access to the /sell command. | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
-setworth | essentials.setworth | Allow access to the /setworth command. | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
-worth | essentials.worth | Allow access to the /worth command. | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
 afk | essentials.afk | Allow access to the /afk command. | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
 compass | essentials.compass | Allow access to the /compass command. | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
 depth | essentials.depth | Allow access to the /depth command. | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
@@ -106,7 +99,6 @@ togglejail | essentials.togglejail | Allow access to the /togglejail command. | 
 vanish | essentials.vanish | Allow access to the /vanish command. | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
 delwarp | essentials.delwarp | Allow access to the /delwarp command. | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
 top | essentials.top | Allow access to the /top command. | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
-tp | essentials.tp | Allow access to the /tp command. | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
 tpaall | essentials.tpaall | Allow access to the /tpaall command. | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
 tpall | essentials.tpall | Allow access to the /tpall command. | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
 tpo | essentials.tpo | Allow access to the /tpo command. | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
@@ -155,8 +147,6 @@ unlimited | essentials.unlimited.item-[itemname] | Allows the player to recieve 
 unlimited | essentials.unlimited.item-all | Allows the player to recieve an unlimited stack of any item. | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
 unlimited | essentials.unlimited.item-bucket | Allows the player to recieve an unlimited use of empty/lava/water buckets. | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
 unlimited | essentials.unlimited.others | Allows the player to gift/remove another player with an unlimited stack. | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
-balance | essentials.balance.others | Allows you to see the balance of other players | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
-eco | essentials.eco.loan | Gives the player unlimited money. | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
 afk | essentials.afk.kickexempt | Exempts the user from being auto kicked for AFK | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
 afk | essentials.afk.others | Allows you to AFK other players. | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
 getpos | essentials.getpos.others | Allow user to get the position of another player. | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
