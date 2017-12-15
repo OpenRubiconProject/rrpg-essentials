@@ -24,6 +24,13 @@ import java.util.LinkedList;
  */
 public class RRPGEssentials extends JavaPlugin implements Module {
 
+    EssentialsChat chat = new EssentialsChat();
+    EssentialsCheat cheat = new EssentialsCheat();
+    EssentialsGeneral general = new EssentialsGeneral();
+    EssentialsProtect protect = new EssentialsProtect();
+    EssentialsLocations locations = new EssentialsLocations();
+
+
     @Override
     public ArrayList<DatabaseModel> getDatabaseModels() {
         return null;
@@ -32,11 +39,11 @@ public class RRPGEssentials extends JavaPlugin implements Module {
     @Override
     public ArrayList<Command> getCommands() {
         ArrayList<Command> commands = new ArrayList<Command>();
-        commands.addAll(new EssentialsGeneral().getCommands());
-        commands.addAll(new EssentialsProtect().getCommands());
-        commands.addAll(new EssentialsLocations().getCommands());
-        commands.addAll(new EssentialsChat().getCommands());
-        commands.addAll(new EssentialsCheat().getCommands());
+        commands.addAll(general.getCommands());
+        commands.addAll(protect.getCommands());
+        commands.addAll(locations.getCommands());
+        commands.addAll(chat.getCommands());
+        commands.addAll(cheat.getCommands());
         return null;
     }
 
@@ -47,7 +54,9 @@ public class RRPGEssentials extends JavaPlugin implements Module {
 
     @Override
     public ArrayList<PlayerData> getPlayerDatas() {
-        return null;
+        ArrayList<PlayerData> data = new ArrayList<PlayerData>();
+        data.add(new Homes());
+        return data;
     }
 
     @Override
@@ -72,7 +81,7 @@ public class RRPGEssentials extends JavaPlugin implements Module {
 
     @Override
     public String getKey() {
-        return "rrpg-general";
+        return "rrpg-essentials";
     }
 
     @Override
