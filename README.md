@@ -5,7 +5,7 @@ Commands:
 
 Command | Permission | Description | Status
 --- | --- | --- | ---
-tpdeny | essentials.tpdeny | Allow access to the /tpdeny command. | In Progress
+tpdeny | essentials.tpdeny | Allow access to the /tpdeny command. | ![#c5f015](https://placehold.it/15/ffff00/000000?text=+)In Progress
 tphere | essentials.tphere | Allow access to the /tphere command. | In Progress
 tpaccept | essentials.tpaccept | Allow access to the /tpaccept command. | In Progress
 tpahere | essentials.tpahere | Allow access to the /tpahere command. | In Progress
