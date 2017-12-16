@@ -7,16 +7,18 @@ import com.openrubicon.core.api.interactables.interfaces.Interactable;
 import com.openrubicon.core.api.permission.interfaces.PermissionNode;
 import com.openrubicon.core.api.utility.DynamicPrimitive;
 import com.openrubicon.essentials.locations.events.onPlayerWarp;
-import com.openrubicon.essentials.locations.homes.playerdata.PlayerHomes;
-import org.bukkit.Location;
+import com.openrubicon.essentials.locations.homes.playerdata.LastLocation;
+import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
 
-public class Home extends Command {
-
+/**
+ * Created by Quinn on 12/15/2017.
+ */
+public class Back extends Command {
     @Override
     public String getCommandFormat() {
-        return "home $s";
+        return "back";
     }
 
     @Override
@@ -28,25 +30,9 @@ public class Home extends Command {
 
     @Override
     public void handle(Interactable interactable, ArrayList<DynamicPrimitive> args) {
-        org.bukkit.entity.Player player = ((org.bukkit.entity.Player)interactable).getPlayer();
-        PlayerHomes playerHomes = RRPGCore.players.getPlayerData(player, PlayerHomes.class);
-
-        if(playerHomes == null || playerHomes.getSize() == 0){
-            //No home to teleport to.
-            player.sendMessage("You do not have a home to teleport to.");
-            return;
-        }
-
-        Location home = playerHomes.getHome(args.get(0).getString());
-        if(home != null){
-            Location playerlocation = player.getLocation();
-            Location oldLocation = playerlocation;
-            playerlocation = home;
-            new onPlayerWarp(player, oldLocation, playerlocation).invoke();   //invoke onPlayerWarp event
-        }
-
-        player.sendMessage("You do not have a home with that name.");
-        return;
+        Player p = ((Player)interactable).getPlayer();
+        LastLocation lastLocation = RRPGCore.players.getPlayerData(p, LastLocation.class);
+        lastLocation.goToLastLocation(p);
     }
 
     @Override
@@ -55,7 +41,7 @@ public class Home extends Command {
         perms.add(new PermissionNode() {
             @Override
             public String getNode() {
-                return "rrpg.essentials.homes.home";
+                return "rrpg.essentials.homes.back";
             }
         });
         return perms;

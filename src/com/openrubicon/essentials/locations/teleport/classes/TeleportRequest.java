@@ -1,6 +1,7 @@
 package com.openrubicon.essentials.locations.teleport.classes;
 
 import com.openrubicon.core.api.server.players.interfaces.PlayerData;
+import com.openrubicon.essentials.locations.events.onPlayerWarp;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
@@ -37,7 +38,9 @@ public class TeleportRequest implements PlayerData {
         //If the expiry date hasn't past, teleport the player
         if(isExpired()) {
             Location moveMe = playerToMove.getLocation();
+            Location temp = moveMe;
             moveMe = this.location;
+            new onPlayerWarp(playerToMove, temp, moveMe).invoke();   //invoke onPlayerWarp event
             this.clearRequest();
             return;
         }
