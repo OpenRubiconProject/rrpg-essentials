@@ -15,7 +15,7 @@ sethome | essentials.sethome | Allow access to the /sethome command. | ![#ffff00
 delhome | essentials.delhome | Allow access to the /delhome command. | ![#ffff00](https://placehold.it/15/ffff00/000000?text=+) In Progress
 home | essentials.home | Allow access to the /home command. | ![#ffff00](https://placehold.it/15/ffff00/000000?text=+) In Progress
 homes | essentials.homes | Allow access to the /homes command | ![#ffff00](https://placehold.it/15/ffff00/000000?text=+) In Progress
-break | essentials.break | Allows access to the /break command. | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
+break | essentials.break | Allows access to the /break command. | ![#d7f442](https://placehold.it/15/d7f442/000000?text=+) Requires Testing
 enchant | essentials.enchant | Allows access to the /enchant command. | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
 exp | essentials.exp | Allow access to the /exp command. | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
 feed | essentials.feed | Allows access to the /feed command. | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
