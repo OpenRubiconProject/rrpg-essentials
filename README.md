@@ -5,26 +5,26 @@ Commands:
 
 Command | Permission | Description | Status
 --- | --- | --- | ---
-tpdeny | essentials.tpdeny | Allow access to the /tpdeny command. | ![#ffff00](https://placehold.it/15/ffff00/000000?text=+) In Progress
-tphere | essentials.tphere | Allow access to the /tphere command. | ![#ffff00](https://placehold.it/15/ffff00/000000?text=+) In Progress
-tpaccept | essentials.tpaccept | Allow access to the /tpaccept command. | ![#ffff00](https://placehold.it/15/ffff00/000000?text=+) In Progress
-tpahere | essentials.tpahere | Allow access to the /tpahere command. | ![#ffff00](https://placehold.it/15/ffff00/000000?text=+) In Progress
-tpa | essentials.tpa | Allow access to the /tpa command. | ![#ffff00](https://placehold.it/15/ffff00/000000?text=+) In Progress
-tp | essentials.tpa | Allow access to the /tpa command. | ![#ffff00](https://placehold.it/15/ffff00/000000?text=+) In Progress
-sethome | essentials.sethome | Allow access to the /sethome command. | ![#ffff00](https://placehold.it/15/ffff00/000000?text=+) In Progress
-delhome | essentials.delhome | Allow access to the /delhome command. | ![#ffff00](https://placehold.it/15/ffff00/000000?text=+) In Progress
-home | essentials.home | Allow access to the /home command. | ![#ffff00](https://placehold.it/15/ffff00/000000?text=+) In Progress
-homes | essentials.homes | Allow access to the /homes command | ![#ffff00](https://placehold.it/15/ffff00/000000?text=+) In Progress
-break | essentials.break | Allows access to the /break command. | ![#d7f442](https://placehold.it/15/d7f442/000000?text=+) Requires Testing
+tpdeny | essentials.tpdeny | Allow access to the /tpdeny command. | ![#d7f442](https://placehold.it/15/d7f442/000000?text=+) Requires Testing
+tphere | essentials.tphere | Allow access to the /tphere command. | ![#d7f442](https://placehold.it/15/d7f442/000000?text=+) Requires Testing
+tpaccept | essentials.tpaccept | Allow access to the /tpaccept command. | ![#d7f442](https://placehold.it/15/d7f442/000000?text=+) Requires Testing
+tpahere | essentials.tpahere | Allow access to the /tpahere command. | ![#d7f442](https://placehold.it/15/d7f442/000000?text=+) Requires Testing
+tpa | essentials.tpa | Allow access to the /tpa command. | ![#d7f442](https://placehold.it/15/d7f442/000000?text=+) Requires Testing
+tp | essentials.tpa | Allow access to the /tpa command. | ![#d7f442](https://placehold.it/15/d7f442/000000?text=+) Requires Testing
+sethome | essentials.sethome | Allow access to the /sethome command. | ![#d7f442](https://placehold.it/15/d7f442/000000?text=+) Requires Testing
+delhome | essentials.delhome | Allow access to the /delhome command. | ![#d7f442](https://placehold.it/15/d7f442/000000?text=+) Requires Testing
+home | essentials.home | Allow access to the /home command. | ![#d7f442](https://placehold.it/15/d7f442/000000?text=+) Requires Testing
+homes | essentials.homes | Allow access to the /homes command | ![#d7f442](https://placehold.it/15/d7f442/000000?text=+) Requires Testing
+break | essentials.break | Allows access to the /break command. | ![#00ff00](https://placehold.it/15/00ff00/000000?text=+) Working
 enchant | essentials.enchant | Allows access to the /enchant command. | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
 exp | essentials.exp | Allow access to the /exp command. | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
-feed | essentials.feed | Allows access to the /feed command. | ![#ffff00](https://placehold.it/15/ffff00/000000?text=+) In Progress
+feed | essentials.feed | Allows access to the /feed command. | ![#d7f442](https://placehold.it/15/d7f442/000000?text=+) Requires Testing
 fly | essentials.fly | Allow access to the /fly command. | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
-gamemode | essentials.gamemode | Allow access to the /gamemode command. | ![#ffff00](https://placehold.it/15/ffff00/000000?text=+) In Progress
+gamemode | essentials.gamemode | Allow access to the /gamemode command. | ![#00ff00](https://placehold.it/15/00ff00/000000?text=+) Working
 give | essentials.give | Allow access to the /give command. | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
 god | essentials.god | Allow access to the /god command. | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
 hat | essentials.hat | Allow access to the /hat command. | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
-heal | essentials.heal | Allow access to the /heal command. | ![#ffff00](https://placehold.it/15/ffff00/000000?text=+) In Progress
+heal | essentials.heal | Allow access to the /heal command. | ![#00ff00](https://placehold.it/15/00ff00/000000?text=+) Working
 item | essentials.item | Allow access to the /item command. | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
 kit | essentials.kit | Allow access to the /kit command. | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
 more | essentials.more | Allows access to the /more command. | ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) Not Implemented
