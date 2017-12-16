@@ -27,7 +27,7 @@ public class DelHome extends Command {
     @Override
     public void handle(Interactable interactable, ArrayList<DynamicPrimitive> args) {
 
-        Player player = ((Player)interactable).getPlayer();
+        Player player = ((com.openrubicon.core.api.interactables.Player)interactable).getPlayer();
         PlayerHomes playerHomes = RRPGCore.players.getPlayerData(player, PlayerHomes.class);
 
         if(playerHomes == null){

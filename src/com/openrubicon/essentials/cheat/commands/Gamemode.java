@@ -28,8 +28,26 @@ public class Gamemode extends Command {
 
     @Override
     public void handle(Interactable interactable, ArrayList<DynamicPrimitive> args) {
-        Player player = ((Player)interactable).getPlayer();
-        GameMode gm = GameMode.valueOf(args.get(0).getString());
+        Player player = ((com.openrubicon.core.api.interactables.Player)interactable).getPlayer();
+        GameMode gm;
+        switch(args.get(0).getString().toLowerCase()){
+            case "survival":
+                gm = GameMode.SURVIVAL;
+                break;
+            case "creative":
+                gm = GameMode.CREATIVE;
+                break;
+            case "adventure":
+                gm = GameMode.ADVENTURE;
+                break;
+            case "spectator":
+                gm = GameMode.SPECTATOR;
+                break;
+            default:
+                player.sendMessage("That gamemode does not exist");
+                return;
+        }
+
         if(gm == null){
             return;
         }

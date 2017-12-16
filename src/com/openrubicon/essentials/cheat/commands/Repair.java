@@ -29,10 +29,10 @@ public class Repair extends Command {
 
     @Override
     public void handle(Interactable interactable, ArrayList<DynamicPrimitive> arrayList) {
-        Player player = ((Player)interactable).getPlayer();
-        ItemStack i = player.getItemOnCursor();
+        Player player = ((com.openrubicon.core.api.interactables.Player)interactable).getPlayer();
+        ItemStack i = player.getInventory().getItemInMainHand();
         Material m = i.getType();
-        if(i == null || m == null){
+        if(i == null || m == null || i.getDurability() == (m.getMaxDurability())){
             return;
         }
         i.setDurability(m.getMaxDurability());

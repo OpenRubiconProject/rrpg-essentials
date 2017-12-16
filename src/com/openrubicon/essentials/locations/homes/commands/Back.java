@@ -30,7 +30,7 @@ public class Back extends Command {
 
     @Override
     public void handle(Interactable interactable, ArrayList<DynamicPrimitive> args) {
-        Player p = ((Player)interactable).getPlayer();
+        Player p = ((com.openrubicon.core.api.interactables.Player)interactable).getPlayer();
         LastLocation lastLocation = RRPGCore.players.getPlayerData(p, LastLocation.class);
         lastLocation.goToLastLocation(p);
     }

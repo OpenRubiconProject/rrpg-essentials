@@ -27,7 +27,7 @@ public class Tp extends Command {
 
     @Override
     public void handle(Interactable interactable, ArrayList<DynamicPrimitive> args) {
-        Player player = ((Player)interactable);
+        Player player = ((com.openrubicon.core.api.interactables.Player)interactable);
         if(Bukkit.getPlayer(args.get(0).getString()) != null){
             //Insert cooldown here if needed.
 

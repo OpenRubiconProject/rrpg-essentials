@@ -5,7 +5,10 @@ import com.openrubicon.core.api.interactables.enums.InteractableType;
 import com.openrubicon.core.api.interactables.interfaces.Interactable;
 import com.openrubicon.core.api.permission.interfaces.PermissionNode;
 import com.openrubicon.core.api.utility.DynamicPrimitive;
+import com.openrubicon.essentials.RRPGEssentials;
+import com.openrubicon.essentials.locations.teleport.classes.TeleportManager;
 import com.openrubicon.essentials.locations.teleport.classes.TeleportRequest;
+import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
 
@@ -24,18 +27,17 @@ public class TpDeny extends Command {
 
     @Override
     public void handle(Interactable interactable, ArrayList<DynamicPrimitive> args) {
-        com.openrubicon.core.api.server.players.Player player = ((com.openrubicon.core.api.server.players.Player)interactable);
-        org.bukkit.entity.Player bukkitPlayer = ((com.openrubicon.core.api.interactables.Player)interactable).getPlayer();
+        Player player = ((com.openrubicon.core.api.interactables.Player)interactable).getPlayer();
+        TeleportManager teleportManager = RRPGEssentials.locations.teleportManager;
 
-        TeleportRequest teleportRequest = player.getData(TeleportRequest.class);
         //Check if player has any pending teleport requests
-        if(teleportRequest == null || !teleportRequest.isExpired()){
-            bukkitPlayer.sendMessage("No pending teleports.");
+        if(!teleportManager.hasPending(player)){
+            player.sendMessage("No pending teleports.");
             return;
         }
 
         //If there is a request, deny it.
-        teleportRequest.clearRequest();
+        teleportManager.removeRequest(player);
         return;
     }
 

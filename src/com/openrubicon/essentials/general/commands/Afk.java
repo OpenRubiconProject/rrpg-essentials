@@ -28,14 +28,14 @@ public class Afk extends Command {
 
     @Override
     public void handle(Interactable interactable, ArrayList<DynamicPrimitive> args) {
-        AfkStatus status = RRPGCore.players.getPlayerData(((Player)interactable).getPlayer(), AfkStatus.class);
+        AfkStatus status = RRPGCore.players.getPlayerData(((com.openrubicon.core.api.interactables.Player)interactable).getPlayer(), AfkStatus.class);
         if(status == null){
             status = new AfkStatus(true);
         }
         if(!status.isAfk){
             status.toggleAfk();
         }
-        Bukkit.broadcastMessage(((Player)interactable).getPlayer().getDisplayName() + " is afk.");
+        Bukkit.broadcastMessage(((com.openrubicon.core.api.interactables.Player)interactable).getPlayer().getDisplayName() + " is afk.");
     }
 
     @Override

@@ -27,7 +27,7 @@ public class TpAccept extends Command {
 
     @Override
     public void handle(Interactable interactable, ArrayList<DynamicPrimitive> args) {
-        Player player = ((Player)interactable).getPlayer();
+        Player player = ((com.openrubicon.core.api.interactables.Player)interactable).getPlayer();
         TeleportManager teleportManager = RRPGEssentials.locations.teleportManager;
 
 

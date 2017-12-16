@@ -30,7 +30,7 @@ public class Tpa extends Command {
     @Override
     public void handle(Interactable interactable, ArrayList<DynamicPrimitive> args) {
         TeleportManager teleportManager = RRPGEssentials.locations.teleportManager;
-        Player player = ((Player)interactable).getPlayer();
+        Player player = ((com.openrubicon.core.api.interactables.Player)interactable).getPlayer();
         Player tpto = Bukkit.getPlayer(args.get(0).getString());
 
         //Check if requested player was found

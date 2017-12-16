@@ -27,7 +27,7 @@ public class SetHome extends Command {
 
     @Override
     public void handle(Interactable interactable, ArrayList<DynamicPrimitive> args) {
-        org.bukkit.entity.Player player = ((org.bukkit.entity.Player)interactable).getPlayer();
+        org.bukkit.entity.Player player = ((com.openrubicon.core.api.interactables.Player)interactable).getPlayer();
         PlayerHomes playerHomes = RRPGCore.players.getPlayerData(player, PlayerHomes.class);
 
         if(playerHomes == null){

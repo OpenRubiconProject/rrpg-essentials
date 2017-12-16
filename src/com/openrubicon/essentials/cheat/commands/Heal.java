@@ -27,7 +27,7 @@ public class Heal extends Command {
 
     @Override
     public void handle(Interactable interactable, ArrayList<DynamicPrimitive> arrayList) {
-        Player player = ((Player)interactable).getPlayer();
+        Player player = ((com.openrubicon.core.api.interactables.Player)interactable).getPlayer();
         player.setHealth(20);
 
     }

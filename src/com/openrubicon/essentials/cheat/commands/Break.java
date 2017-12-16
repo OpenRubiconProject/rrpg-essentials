@@ -5,11 +5,13 @@ import com.openrubicon.core.api.interactables.enums.InteractableType;
 import com.openrubicon.core.api.interactables.interfaces.Interactable;
 import com.openrubicon.core.api.permission.interfaces.PermissionNode;
 import com.openrubicon.core.api.utility.DynamicPrimitive;
+import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class Break extends Command {
     @Override
@@ -26,10 +28,10 @@ public class Break extends Command {
 
     @Override
     public void handle(Interactable interactable, ArrayList<DynamicPrimitive> args) {
-        Player player = ((Player)interactable).getPlayer();
-        List<Block> blocks = player.getLineOfSight(null, 200);
-        if(blocks.size() > 0){
-            blocks.get(0).breakNaturally();
+        Player player = ((com.openrubicon.core.api.interactables.Player)interactable).getPlayer();
+        Block targetBlock = player.getTargetBlock((Set<Material>) null, 200);
+        if(targetBlock != null){
+            targetBlock.setType(Material.AIR);
         }
         return;
     }
