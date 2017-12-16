@@ -1,7 +1,9 @@
 package com.openrubicon.essentials.cheat;
 
 import com.openrubicon.core.api.command.Command;
+import com.openrubicon.core.api.server.players.interfaces.PlayerData;
 import com.openrubicon.essentials.cheat.commands.*;
+import com.openrubicon.essentials.general.playerdata.AfkStatus;
 
 import java.util.ArrayList;
 
@@ -15,5 +17,10 @@ public class Cheat {
         commands.add(new Heal());
         commands.add(new Repair());
         return commands;
+    }
+
+    public ArrayList<PlayerData> getPlayerData(){
+        ArrayList<PlayerData> playerdata = new ArrayList<PlayerData>();
+        return playerdata;
     }
 }

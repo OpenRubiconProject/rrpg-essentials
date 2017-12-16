@@ -1,7 +1,7 @@
 name: RRPGEssentials
 version: 0.0.1
 authors: [ShawnClake, QuinnBast]
-main: com.openrubicon.general.RRPGEssentials
+main: com.openrubicon.essentials.RRPGEssentials
 depend: [RRPGCore]
 database: true
 website: https://github.com/OpenRubiconProject

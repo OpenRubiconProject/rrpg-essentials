@@ -1,7 +1,10 @@
 package com.openrubicon.essentials.locations;
 
 import com.openrubicon.core.api.command.Command;
+import com.openrubicon.core.api.server.players.interfaces.PlayerData;
 import com.openrubicon.essentials.locations.homes.commands.*;
+import com.openrubicon.essentials.locations.homes.playerdata.LastLocation;
+import com.openrubicon.essentials.locations.homes.playerdata.PlayerHomes;
 import com.openrubicon.essentials.locations.teleport.classes.TeleportManager;
 import com.openrubicon.essentials.locations.teleport.classes.TeleportRequest;
 import com.openrubicon.essentials.locations.teleport.commands.*;
@@ -29,6 +32,13 @@ public class Locations {
         commands.add(new Home());
         commands.add(new Homes());
         return commands;
+    }
+
+    public ArrayList<PlayerData> getPlayerData(){
+        ArrayList<PlayerData> playerdata = new ArrayList<PlayerData>();
+        playerdata.add(new LastLocation());
+        playerdata.add(new PlayerHomes());
+        return playerdata;
     }
 
 }

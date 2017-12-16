@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class Mail extends Command {
     @Override
     public String getCommandFormat() {
-        return null;
+        return "mail";
     }
 
     @Override

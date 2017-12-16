@@ -1,5 +1,6 @@
 package com.openrubicon.essentials;
 
+import com.openrubicon.core.RRPGCore;
 import com.openrubicon.core.api.command.Command;
 import com.openrubicon.core.api.configuration.ConfigurationProperty;
 import com.openrubicon.core.api.database.interfaces.DatabaseModel;
@@ -54,7 +55,11 @@ public class RRPGEssentials extends JavaPlugin implements Module {
     @Override
     public ArrayList<PlayerData> getPlayerDatas() {
         ArrayList<PlayerData> data = new ArrayList<PlayerData>();
-        data.add(new PlayerHomes());
+        data.addAll(general.getPlayerData());
+        data.addAll(protect.getPlayerData());
+        data.addAll(locations.getPlayerData());
+        data.addAll(chat.getPlayerData());
+        data.addAll(cheat.getPlayerData());
         return data;
     }
 
@@ -91,5 +96,11 @@ public class RRPGEssentials extends JavaPlugin implements Module {
     @Override
     public String getConfiguration() {
         return this.getDataFolder().getAbsolutePath();
+    }
+
+    @Override
+    public void onLoad()
+    {
+        RRPGCore.modules.addModule(this);
     }
 }

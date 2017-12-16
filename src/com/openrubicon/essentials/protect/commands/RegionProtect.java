@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class RegionProtect extends Command {
     @Override
     public String getCommandFormat() {
-        return null;
+        return "region protext $n";
     }
 
     @Override
