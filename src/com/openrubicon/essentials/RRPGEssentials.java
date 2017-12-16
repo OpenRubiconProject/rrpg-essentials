@@ -9,26 +9,25 @@ import com.openrubicon.core.api.recipes.interfaces.Recipe;
 import com.openrubicon.core.api.scoreboard.interfaces.ScoreboardSection;
 import com.openrubicon.core.api.server.players.interfaces.PlayerData;
 import com.openrubicon.core.interfaces.Module;
-import com.openrubicon.essentials.chat.EssentialsChat;
-import com.openrubicon.essentials.cheat.EssentialsCheat;
-import com.openrubicon.essentials.general.EssentialsGeneral;
-import com.openrubicon.essentials.locations.EssentialsLocations;
-import com.openrubicon.essentials.protect.EssentialsProtect;
+import com.openrubicon.essentials.chat.Chat;
+import com.openrubicon.essentials.cheat.Cheat;
+import com.openrubicon.essentials.general.General;
+import com.openrubicon.essentials.locations.Locations;
+import com.openrubicon.essentials.locations.homes.playerdata.PlayerHomes;
+import com.openrubicon.essentials.protect.Protect;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-/**
- * Created by Quinn on 12/12/2017.
- */
+
 public class RRPGEssentials extends JavaPlugin implements Module {
 
-    EssentialsChat chat = new EssentialsChat();
-    EssentialsCheat cheat = new EssentialsCheat();
-    EssentialsGeneral general = new EssentialsGeneral();
-    EssentialsProtect protect = new EssentialsProtect();
-    EssentialsLocations locations = new EssentialsLocations();
+    public static Chat chat = new Chat();
+    public static Cheat cheat = new Cheat();
+    public static General general = new General();
+    public static Protect protect = new Protect();
+    public static Locations locations = new Locations();
 
 
     @Override
@@ -44,7 +43,7 @@ public class RRPGEssentials extends JavaPlugin implements Module {
         commands.addAll(locations.getCommands());
         commands.addAll(chat.getCommands());
         commands.addAll(cheat.getCommands());
-        return null;
+        return commands;
     }
 
     @Override
@@ -55,28 +54,28 @@ public class RRPGEssentials extends JavaPlugin implements Module {
     @Override
     public ArrayList<PlayerData> getPlayerDatas() {
         ArrayList<PlayerData> data = new ArrayList<PlayerData>();
-        data.add(new Homes());
+        data.add(new PlayerHomes());
         return data;
     }
 
     @Override
     public ArrayList<Recipe> getRecipes() {
-        return null;
+        return new ArrayList<Recipe>();
     }
 
     @Override
     public ArrayList<ScoreboardSection> getScoreboardSections() {
-        return null;
+        return new ArrayList<ScoreboardSection>();
     }
 
     @Override
     public ArrayList<PermissionNode> getPermissionNodes() {
-        return null;
+        return new ArrayList<PermissionNode>();
     }
 
     @Override
     public LinkedList<ConfigurationProperty> getConfigurationProperties() {
-        return null;
+        return new LinkedList<ConfigurationProperty>();
     }
 
     @Override
@@ -86,7 +85,7 @@ public class RRPGEssentials extends JavaPlugin implements Module {
 
     @Override
     public String getOverview() {
-        return "Essential server commands";
+        return "Essential commands for server";
     }
 
     @Override

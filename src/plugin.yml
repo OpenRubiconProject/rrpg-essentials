@@ -7,5 +7,5 @@ database: true
 website: https://github.com/OpenRubiconProject
 commands:
       rrpg-essentials:
-               description: Spits out the current status of Rubicon EssentialsGeneral and its versions
+               description: Spits out the current status of Rubicon General and its versions
                usage: /rrpg-general

@@ -5,12 +5,10 @@ import com.openrubicon.core.api.interactables.enums.InteractableType;
 import com.openrubicon.core.api.interactables.interfaces.Interactable;
 import com.openrubicon.core.api.permission.interfaces.PermissionNode;
 import com.openrubicon.core.api.utility.DynamicPrimitive;
+import org.bukkit.Bukkit;
 
 import java.util.ArrayList;
 
-/**
- * Created by Quinn on 12/12/2017.
- */
 public class Compass extends Command {
     @Override
     public String getCommandFormat() {
@@ -25,7 +23,8 @@ public class Compass extends Command {
     }
 
     @Override
-    public void handle(Interactable interactable, ArrayList<DynamicPrimitive> arrayList) {
+    public void handle(Interactable interactable, ArrayList<DynamicPrimitive> args) {
+        Bukkit.broadcastMessage("Command coming soon.");
     }
 
     @Override

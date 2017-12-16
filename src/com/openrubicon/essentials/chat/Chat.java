@@ -6,10 +6,7 @@ import com.openrubicon.essentials.chat.commands.MailSend;
 
 import java.util.ArrayList;
 
-/**
- * Created by Quinn on 12/12/2017.
- */
-public class EssentialsChat {
+public class Chat {
 
     public ArrayList<Command> getCommands(){
         ArrayList<Command> commands = new ArrayList<Command>();

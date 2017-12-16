@@ -5,9 +5,6 @@ import org.bukkit.Location;
 
 import java.util.ArrayList;
 
-/**
- * Created by Quinn on 12/14/2017.
- */
 public class PlayerHomes implements PlayerData {
 
     private class Home{
@@ -28,8 +25,8 @@ public class PlayerHomes implements PlayerData {
         }
     }
 
-    ArrayList<Home> homes;
-    int capacity = 2;
+    private ArrayList<Home> homes;
+    private int capacity = 2;
 
 
     public PlayerHomes(){
@@ -40,7 +37,7 @@ public class PlayerHomes implements PlayerData {
         return homes.size();
     }
 
-    public Location getLocation(String name){
+    public Location getHome(String name){
         for(Home h : homes){
             if(h.getName().equals(name)){
                 return h.getLocation();
@@ -75,12 +72,10 @@ public class PlayerHomes implements PlayerData {
         return false;
     }
 
-    public String[] listHomes(){
-        String[] homeList = new String[capacity];
-        int i=0;
+    public ArrayList<String> listHomes(){
+        ArrayList<String> homeList = new ArrayList<String>();
         for(Home h : homes){
-           homeList[i] = h.getName();
-           i++;
+           homeList.add(h.getName());
         }
         return homeList;
     }

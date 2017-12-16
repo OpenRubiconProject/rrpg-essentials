@@ -5,10 +5,8 @@ import com.openrubicon.essentials.protect.commands.RegionProtect;
 
 import java.util.ArrayList;
 
-/**
- * Created by Quinn on 12/12/2017.
- */
-public class EssentialsProtect {
+
+public class Protect {
 
     public ArrayList<Command> getCommands(){
         ArrayList<Command> commands = new ArrayList<Command>();

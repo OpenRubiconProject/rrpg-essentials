@@ -1,17 +1,16 @@
 package com.openrubicon.essentials.locations.homes.commands;
 
+import com.openrubicon.core.RRPGCore;
 import com.openrubicon.core.api.command.Command;
 import com.openrubicon.core.api.interactables.enums.InteractableType;
 import com.openrubicon.core.api.interactables.interfaces.Interactable;
-import com.openrubicon.core.api.server.players.Player;
+import com.openrubicon.core.api.permission.interfaces.PermissionNode;
 import com.openrubicon.core.api.utility.DynamicPrimitive;
 import com.openrubicon.essentials.locations.homes.playerdata.PlayerHomes;
+import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
 
-/**
- * Created by Quinn on 12/14/2017.
- */
 public class DelHome extends Command {
     @Override
     public String getCommandFormat() {
@@ -26,22 +25,34 @@ public class DelHome extends Command {
     }
 
     @Override
-    public void handle(Interactable interactable, ArrayList<DynamicPrimitive> arrayList) {
-        Player player = ((Player)interactable);
-        org.bukkit.entity.Player bukkitPlayer = ((com.openrubicon.core.api.interactables.Player)interactable).getPlayer();
-        PlayerHomes playerHomes = (PlayerHomes) player.getData(PlayerHomes.class);
+    public void handle(Interactable interactable, ArrayList<DynamicPrimitive> args) {
+
+        Player player = ((Player)interactable).getPlayer();
+        PlayerHomes playerHomes = RRPGCore.players.getPlayerData(player, PlayerHomes.class);
 
         if(playerHomes == null){
             //No home to delete.
-            bukkitPlayer.sendMessage("You do not have any homes set. Set a home with /sethome");
+            player.sendMessage("You do not have any homes set. Set a home with /sethome");
             return;
         }
 
-        if(playerHomes.removeHome(arrayList.get(0).getString())) {
-            bukkitPlayer.sendMessage(arrayList.get(0).getString() + " has been deleted.");
+        if(playerHomes.removeHome(args.get(0).getString())) {
+            player.sendMessage(args.get(0).getString() + " has been deleted.");
         } else {
-            bukkitPlayer.sendMessage("You do not have a home with that name. Type /homes to see a list of your homes.");
+            player.sendMessage("You do not have a home with that name. Type /homes to see a list of your homes.");
         }
 
+    }
+
+    @Override
+    public ArrayList<PermissionNode> getPermissions() {
+        ArrayList<PermissionNode> perms = new ArrayList<PermissionNode>();
+        perms.add(new PermissionNode() {
+            @Override
+            public String getNode() {
+                return "rrpg.essentials.homes.delhome";
+            }
+        });
+        return perms;
     }
 }

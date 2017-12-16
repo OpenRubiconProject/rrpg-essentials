@@ -6,10 +6,7 @@ import com.openrubicon.essentials.general.commands.Compass;
 
 import java.util.ArrayList;
 
-/**
- * Created by Quinn on 12/12/2017.
- */
-public class EssentialsGeneral {
+public class General {
 
     public ArrayList<Command> getCommands(){
         ArrayList<Command> commands = new ArrayList<Command>();

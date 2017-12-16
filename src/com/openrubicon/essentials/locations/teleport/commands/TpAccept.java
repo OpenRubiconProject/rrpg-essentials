@@ -1,19 +1,17 @@
 package com.openrubicon.essentials.locations.teleport.commands;
 
 import com.openrubicon.core.api.command.Command;
-import com.openrubicon.core.api.interactables.Player;
 import com.openrubicon.core.api.interactables.enums.InteractableType;
 import com.openrubicon.core.api.interactables.interfaces.Interactable;
+import com.openrubicon.core.api.permission.interfaces.PermissionNode;
 import com.openrubicon.core.api.utility.DynamicPrimitive;
-import com.openrubicon.essentials.locations.teleport.playerdata.TeleportRequest;
-import org.bukkit.Bukkit;
-import org.bukkit.Location;
+import com.openrubicon.essentials.RRPGEssentials;
+import com.openrubicon.essentials.locations.teleport.classes.TeleportManager;
+import com.openrubicon.essentials.locations.teleport.classes.TeleportRequest;
+import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
 
-/**
- * Created by Quinn on 12/14/2017.
- */
 public class TpAccept extends Command {
     @Override
     public String getCommandFormat() {
@@ -28,19 +26,31 @@ public class TpAccept extends Command {
     }
 
     @Override
-    public void handle(Interactable interactable, ArrayList<DynamicPrimitive> arrayList) {
-        com.openrubicon.core.api.server.players.Player player = ((com.openrubicon.core.api.server.players.Player)interactable);
-        org.bukkit.entity.Player bukkitPlayer = ((com.openrubicon.core.api.interactables.Player)interactable).getPlayer();
+    public void handle(Interactable interactable, ArrayList<DynamicPrimitive> args) {
+        Player player = ((Player)interactable).getPlayer();
+        TeleportManager teleportManager = RRPGEssentials.locations.teleportManager;
 
-        TeleportRequest teleportRequest = player.getData(TeleportRequest.class);
+
         //Check if player has any pending teleport requests
-        if(teleportRequest == null || !teleportRequest.isRequest()){
-            bukkitPlayer.sendMessage("No pending teleports.");
+        if(!teleportManager.hasPending(player)){
+            player.sendMessage("No pending teleports.");
             return;
         }
 
         //If there is a request, perform teleport.
-        teleportRequest.teleport();
+        teleportManager.teleport(player);
         return;
+    }
+
+    @Override
+    public ArrayList<PermissionNode> getPermissions() {
+        ArrayList<PermissionNode> perms = new ArrayList<PermissionNode>();
+        perms.add(new PermissionNode() {
+            @Override
+            public String getNode() {
+                return "rrpg.essentials.teleport.request.tpaccept";
+            }
+        });
+        return perms;
     }
 }

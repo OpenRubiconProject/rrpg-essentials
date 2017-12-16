@@ -1,18 +1,19 @@
 package com.openrubicon.essentials.locations.teleport.commands;
 
+import com.openrubicon.core.RRPGCore;
 import com.openrubicon.core.api.command.Command;
 import com.openrubicon.core.api.interactables.enums.InteractableType;
 import com.openrubicon.core.api.interactables.interfaces.Interactable;
+import com.openrubicon.core.api.permission.interfaces.PermissionNode;
 import com.openrubicon.core.api.utility.DynamicPrimitive;
-import com.openrubicon.essentials.locations.teleport.playerdata.TeleportRequest;
+import com.openrubicon.essentials.RRPGEssentials;
+import com.openrubicon.essentials.locations.teleport.classes.TeleportManager;
+import com.openrubicon.essentials.locations.teleport.classes.TeleportRequest;
 import org.bukkit.Bukkit;
-import com.openrubicon.core.api.server.players.Player;
+import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
 
-/**
- * Created by Quinn on 12/14/2017.
- */
 public class Tpa extends Command {
     @Override
     public String getCommandFormat() {
@@ -27,31 +28,43 @@ public class Tpa extends Command {
     }
 
     @Override
-    public void handle(Interactable interactable, ArrayList<DynamicPrimitive> arrayList) {
-        //Command sender wants to go to another player.
+    public void handle(Interactable interactable, ArrayList<DynamicPrimitive> args) {
+        TeleportManager teleportManager = RRPGEssentials.locations.teleportManager;
+        Player player = ((Player)interactable).getPlayer();
+        Player tpto = Bukkit.getPlayer(args.get(0).getString());
 
-        Player player = ((Player)interactable);
-        org.bukkit.entity.Player bukkitPlayer = ((com.openrubicon.core.api.interactables.Player)interactable).getPlayer();
-
-        Player tpto = (Player)Bukkit.getPlayer(arrayList.get(0).getString());
-        org.bukkit.entity.Player bukkittpto = Bukkit.getPlayer(arrayList.get(0).getString());
-        TeleportRequest teleportRequest = (TeleportRequest) tpto.getData(TeleportRequest.class);
-
-        //Check if the player was found
-        if(bukkittpto == null || tpto == null){
-            bukkitPlayer.sendMessage("That player does not exist.");
+        //Check if requested player was found
+        if(tpto == null){
+            player.sendMessage("That player does not exist.");
             return;
         }
 
-        //Add request to:
-        //Move commandSender to TpTo's Location
-        if(teleportRequest.setTeleport(bukkitPlayer, bukkittpto.getLocation())){
-            //If a request was sent, notify both players
-            bukkitPlayer.sendMessage("Sending request.");
-            bukkittpto.sendMessage(bukkitPlayer.getDisplayName() + " would like to teleport to you. Type /tpaccept to accept or /tpdeny to deny.");
-        } else {
-            //If a request was not sent, notify the sending player.
-            bukkitPlayer.sendMessage(bukkittpto.getDisplayName() + " already has a pending request.");
+        //Command sender wants to go to another player.
+        //Check if there is a pending teleport:
+        if(teleportManager.hasPending(tpto)){
+            //Player has a pending request.
+            player.sendMessage(tpto.getDisplayName() + " already has a pending request.");
+            return;
         }
+        else{
+            //Add request to:
+            //Move commandSender to TpTo's Location
+            teleportManager.addRequest(new TeleportRequest(player, tpto.getLocation(), tpto));
+            player.sendMessage("Sending request.");
+            tpto.sendMessage(player.getDisplayName() + " would like to teleport to you. Type /tpaccept to accept or /tpdeny to deny.");
+            return;
+        }
+    }
+
+    @Override
+    public ArrayList<PermissionNode> getPermissions() {
+        ArrayList<PermissionNode> perms = new ArrayList<PermissionNode>();
+        perms.add(new PermissionNode() {
+            @Override
+            public String getNode() {
+                return "rrpg.essentials.teleport.request.tpa";
+            }
+        });
+        return perms;
     }
 }
