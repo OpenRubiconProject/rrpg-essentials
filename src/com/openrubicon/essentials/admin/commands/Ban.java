@@ -41,6 +41,7 @@ public class Ban extends Command {
         int hours = args.get(2).getInt();
         Date expiryDate = new Date(new Date().getTime() + (hours * 60 * 60 * 100));
         Bukkit.getBanList(BanList.Type.NAME).addBan(playerBanned.getDisplayName(), reason, expiryDate, bannedBy.getDisplayName());
+        playerBanned.kickPlayer("You have been banned!" + reason);
         return;
     }
 
