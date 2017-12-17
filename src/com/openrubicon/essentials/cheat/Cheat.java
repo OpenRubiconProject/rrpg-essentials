@@ -12,10 +12,14 @@ public class Cheat {
     public ArrayList<Command> getCommands(){
         ArrayList<Command> commands = new ArrayList<Command>();
         commands.add(new Break());
+        commands.add(new Enchant());
+        commands.add(new Exp());
+        commands.add(new Fly());
         commands.add(new Feed());
         commands.add(new Gamemode());
         commands.add(new Heal());
         commands.add(new Repair());
+        commands.add(new Enchant());
         return commands;
     }
 

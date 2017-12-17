@@ -1,5 +1,7 @@
 package com.openrubicon.essentials.locations.events;
 
+import com.openrubicon.core.RRPGCore;
+import com.openrubicon.essentials.locations.homes.playerdata.LastLocation;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -20,6 +22,7 @@ public class onPlayerWarp extends Event {
         this.player = p;
         this.previousLocation = oldLocation;
         this.locationWarpedTo = newLocaiton;
+        RRPGCore.players.getPlayerData(p, LastLocation.class).setLastLocation(this.previousLocation);
     }
 
     @Override

@@ -26,6 +26,10 @@ public class LastLocation implements PlayerData {
         return;
     }
 
+    public void setLastLocation(Location l){
+        this.lastLocation = l;
+    }
+
 
 
 }

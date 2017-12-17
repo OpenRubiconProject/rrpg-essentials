@@ -10,6 +10,7 @@ import com.openrubicon.core.api.recipes.interfaces.Recipe;
 import com.openrubicon.core.api.scoreboard.interfaces.ScoreboardSection;
 import com.openrubicon.core.api.server.players.interfaces.PlayerData;
 import com.openrubicon.core.interfaces.Module;
+import com.openrubicon.essentials.admin.Admin;
 import com.openrubicon.essentials.chat.Chat;
 import com.openrubicon.essentials.cheat.Cheat;
 import com.openrubicon.essentials.general.General;
@@ -29,6 +30,7 @@ public class RRPGEssentials extends JavaPlugin implements Module {
     public static General general = new General();
     public static Protect protect = new Protect();
     public static Locations locations = new Locations();
+    public static Admin admin = new Admin();
 
 
     @Override
@@ -44,6 +46,7 @@ public class RRPGEssentials extends JavaPlugin implements Module {
         commands.addAll(locations.getCommands());
         commands.addAll(chat.getCommands());
         commands.addAll(cheat.getCommands());
+        commands.addAll(admin.getCommands());
         return commands;
     }
 
@@ -60,6 +63,7 @@ public class RRPGEssentials extends JavaPlugin implements Module {
         data.addAll(locations.getPlayerData());
         data.addAll(chat.getPlayerData());
         data.addAll(cheat.getPlayerData());
+        data.addAll(admin.getPlayerData());
         return data;
     }
 
